@@ -3,10 +3,11 @@
 ## Starting up a Django project never has been easier
 
 - **django.sh** checks for needed variables
+- asks for the project folder/directory name
 
 ![script checks for two variables](img/1.png)
 
-- asks for the project folder/directory name
+- creates needed folders
 
 ![Give name to your project directory](img/2.png)
 
