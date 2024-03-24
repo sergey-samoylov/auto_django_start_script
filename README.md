@@ -17,7 +17,7 @@
 
 - creates crisp requirements.txt (only used packages, without dependecies, as they will be autoinstalled anyway 😉)
 
-![Give name to your project directory](img/4:.png)
+![Clean requirements.txt](img/4.png)
 
 ### What it does:
 
