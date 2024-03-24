@@ -24,6 +24,7 @@
 - **django.sh** installs virtual environment
 - **django.sh** installs and upgrades pip
 - **django.sh** installs flake8 and black
+- **django.sh** installs additional packages of your choice (added in v0.2 of the script)
 - **django.sh** creates nice and clean requirements.txt (added in v0.2 of the script)
 - **django.sh** edits settings.py (deletes comments, regirsters your first app)
 - **django.sh** starts developer web-server of you Django project
