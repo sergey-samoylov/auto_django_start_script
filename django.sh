@@ -20,10 +20,14 @@ cd ~/Dev/$main_project_folder
 python -m venv venv
 source venv/bin/activate
 
+echo "By default pip will be upgraded"
+echo "and following packages will be installed:"
+default_packages="django flake8 black"
+echo $default_packages
+read -p "Add another packages separated by space: " added_packages
 pip install --upgrade pip
-pip install Django
-pip install flake8
-pip install black
+pip install $default_packages $added_packages
+pip freeze > requirements.txt
 
 django-admin startproject $project_name
 cd $project_name
