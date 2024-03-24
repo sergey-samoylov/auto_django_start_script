@@ -27,7 +27,12 @@ echo $default_packages
 read -p "Add another packages separated by space: " added_packages
 pip install --upgrade pip
 pip install $default_packages $added_packages
-pip freeze > requirements.txt
+
+arr_packages=($default_packages $added_packages)
+
+for package in ${arr_packages[@]}; do
+    echo $package >> requirements.txt;
+done
 
 django-admin startproject $project_name
 cd $project_name
