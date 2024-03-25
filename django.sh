@@ -3,6 +3,11 @@
 # author: Sergey Samoylov
 # name of the script: django.sh
 
+# --- helper function for logs ---
+info() {
+  echo '[INFO] ' "$@"
+}
+
 if [ "$#" -lt 2 ] # if args less than two
     then
         echo "Two names needed"
@@ -20,10 +25,10 @@ cd ~/Dev/$main_project_folder
 python -m venv venv
 source venv/bin/activate
 
-echo "By default pip will be upgraded"
-echo "and following packages will be installed:"
+info "By default pip will be upgraded"
+info "and following packages will be installed:"
 default_packages="django flake8 black"
-echo $default_packages
+info $default_packages
 read -p "Add another packages separated by space: " added_packages
 pip install --upgrade pip
 pip install $default_packages $added_packages
