@@ -3,11 +3,6 @@
 # author: Sergey Samoylov
 # name of the script: django.sh
 
-# --- helper function for logs ---
-info() {
-  echo '[INFO] ' "$@"
-}
-
 if [ "$#" -lt 2 ] # if args less than two
     then
         echo "Two names needed"
@@ -19,25 +14,26 @@ read -p "Enter directory name for your Django project: " main_project_folder
 project_name=$1
 app_name=$2
 
-mkdir ~/Dev/$main_project_folder
+mkdir -p ~/Dev/$main_project_folder
 cd ~/Dev/$main_project_folder
 
 python -m venv venv
 source venv/bin/activate
 
-info "By default pip will be upgraded"
-info "and following packages will be installed:"
+echo "By default pip will be upgraded"
+echo "and following packages will be installed:"
 default_packages="django flake8 black"
-info $default_packages
+echo $default_packages
 read -p "Add another packages separated by space: " added_packages
-pip install --upgrade pip
-pip install $default_packages $added_packages
 
 arr_packages=($default_packages $added_packages)
 
 for package in ${arr_packages[@]}; do
     echo $package >> requirements.txt;
 done
+
+pip install --upgrade pip
+pip install -r requirements.txt
 
 django-admin startproject $project_name
 cd $project_name
@@ -52,6 +48,8 @@ sed -i '/from/,$!d' settings.py
 black settings.py
 
 cd ..
+cd $app_name
+mkdir templates
+cd ..
 python manage.py makemigrations && python manage.py migrate
-clear
 python manage.py runserver
