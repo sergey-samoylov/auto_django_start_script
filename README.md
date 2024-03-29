@@ -38,7 +38,7 @@ More code-cleaning done through the script
 1. chmod +x django.sh # make it executable
 1. ./django.sh name_of_your_project firstapp # do not use snake case for the firstapp yet, please
 1. In a second script asks for MAIN_FOLDER_of_your_project
-1. By default your project will be paced in /home/<username>/Dev/<MAIN_FOLDER_of_your_project>/<name_of_your_project>
+1. By default your project will be paced in /home/<your_username>/Dev/<MAIN_FOLDER_of_your_project>/<name_of_your_project>
 1. If you need any additional apps in venv for your project, write names of the apps when asked (shoul be separated by spaces)
 
 Current file structure v0.3
