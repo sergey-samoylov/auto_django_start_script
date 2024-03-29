@@ -1,4 +1,9 @@
-# AUTO DJANGO >>> django.sh script
+# AUTO DJANGO 
+>>> django.sh shell script 
+
+(major updates in v0️⃣.3️⃣)
+
+
 
 ## Starting up a Django project never has been easier
 
